@@ -11,6 +11,7 @@ Some samples for the Azure SDK for Python
 
 ### Azure Resource Management
 
+* [Retrieve Storage Account Metrics](py-get-storage-account-metrics.md)
 * [Retrieve list of Azure resources (and create a pie chart)](py-get-azure-resources.md)
 * [Generate List of Storage Accounts along with Policy Settings](py-list-storage-accounts-and-policy-settings.md)
 * [List Storage Account Lifecycle Policies](py-list-storage-account-lifecycle-policies.md)
