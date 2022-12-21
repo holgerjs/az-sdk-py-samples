@@ -1,12 +1,18 @@
-## Python: List Storage Account Lifecycle Policies
+## How to use the Azure SDK for Python to list Storage Account Lifecycle Policies
+
+---
+
+**The code samples and information provided within this document are solely for testing and learning purposes and should not be used in production environments.**
+
+---
 
 I was looking into a way to list Storage Accounts that have (or do not have) [Lifecycle Policies](https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-overview) enabled and output them as JSON.
 The [Azure Samples Repository](https://github.com/Azure-Samples) does have a [sample for polices](https://github.com/Azure-Samples/azure-samples-python-management/blob/main/samples/storage/manage_management_policy.py), however, I couldn't figure out how to list policies since the sample only includes examples for Creating, Updating, Deleting and _Getting_ a specific policy. 
 The latter requires the _Resource Group Name_, _Storage Account Name_ and _Management Policy Name_ as parameter which did not seem helpful.
 
-However, a check against the REST API documentation for [Management Policies (Get)](https://learn.microsoft.com/en-us/rest/api/storagerp/management-policies/get?tabs=HTTP) reveals that the [URI Parameter](https://learn.microsoft.com/en-us/rest/api/storagerp/management-policies/get?tabs=HTTP#managementpolicyname) `managementPolicyName` should always be `default`.
+A check against the REST API documentation for [Management Policies (Get)](https://learn.microsoft.com/en-us/rest/api/storagerp/management-policies/get?tabs=HTTP) reveals that the [URI Parameter](https://learn.microsoft.com/en-us/rest/api/storagerp/management-policies/get?tabs=HTTP#managementpolicyname) `managementPolicyName` should always be `default`.
 
-Based on aforementioned sample, the following would work.
+Based on aforementioned sample, the following should work.
 
 ### Import Libraries
 
@@ -58,7 +64,7 @@ def resource_graph_query( query ):
 
 ### Query all Storage Accounts
 
-In order to narrow down the results by a bit, I only queried Storage Accounts from one particular region.
+In order to narrow down the results by a bit, I only queried Storage Accounts from one particular region. If there are a lot of storage accounts in scope this should be tested against a single account first to a) see if it works and b) get an idea about the performance.
 
 ```python
 query = "resources | where type =~ 'Microsoft.Storage/storageAccounts' | where location =~ 'eastus'"
@@ -84,7 +90,7 @@ If this worked, the output would be something like this:
 
 ```json
 {
-    "id": "/subscriptions/b5b916fd-22f9-4006-8344-372f9276562f/resourceGroups/resource_group_name/providers/Microsoft.Storage/storageAccounts/storageaccountname/managementPolicies/default",
+    "id": "/subscriptions/{subscription-id}/resourceGroups/resource_group_name/providers/Microsoft.Storage/storageAccounts/storageaccountname/managementPolicies/default",
     "name": "DefaultManagementPolicy",
     "type": "Microsoft.Storage/storageAccounts/managementPolicies",
     "last_modified_time": "2022-09-23T09:00:20.182687Z",
@@ -113,3 +119,12 @@ If this worked, the output would be something like this:
     }
 }
 ```
+
+### References
+
+| # | Title | URL |
+| --- | --- | --- |
+| 1 | Optimize costs by automatically managing the data lifecycle | https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-overview |
+| 2 | Azure Samples Repository | https://github.com/Azure-Samples |
+| 3 | Management Policies - Get | https://learn.microsoft.com/en-us/rest/api/storagerp/management-policies/get |
+| 4 | Quickstart: Run your first Resource Graph query using Python | https://learn.microsoft.com/en-us/azure/governance/resource-graph/first-query-python |
