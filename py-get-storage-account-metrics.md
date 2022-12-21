@@ -1,8 +1,8 @@
-# Retrieve Storage Account Metrics
+## Retrieve Azure Storage Account Metrics
 
 When using the Azure Portal, it is relatively straightforward to view basic Storage Account Metrics, such as the overall capacity but also blob or files capacity or queue transactions.
 ![Azure Portal - View Blob Capacity](images/blob_capacity_image.png)
-This information can alsp be queried through [Azure Monitor REST API](https://learn.microsoft.com/en-us/rest/api/monitor/metrics/list) or the [Azure SDK for Python](https://learn.microsoft.com/en-us/azure/developer/python/sdk/azure-sdk-overview).
+This information can alsp be queried through [Azure Monitor REST API](https://learn.microsoft.com/en-us/rest/api/monitor/metrics/list) or the [Azure SDK for Python](https://learn.microsoft.com/en-us/azure/developer/python/sdk/azure-sdk-overview). This might make sense if metrics need to be queried at scale against a larger population of storage accounts.
 
 Below is an example for retrieving this information using the Azure SDK for Python. It is basically a function that queries the current storage capacity (based on metric values from the last 4 hours) as well as the transaction count for Queues and Tables for the last 30 days. The timeframe can be modified relatively easy. It might make more sense to pass the desired timeframe into the function though - however, for a first try and testing whether the data can be queried successfully, the below code might work. 
 
@@ -232,3 +232,10 @@ $ python3 get-metrics.py
 0                     {subscription_id}                /subscriptions/{subscription_id}...     Bytes   2.072325e+11      Bytes    1.194019e+12
 1                     {subscription_id}                /subscriptions/{subscription_id}...     Bytes   3.479000e+03      Bytes    0.000000e+00
 ```
+
+## References
+
+| # | Title | URL |
+| --- | --- | --- |
+| 1 | Azure Monitor REST API | https://learn.microsoft.com/en-us/rest/api/monitor/metrics/list |
+| 2 | Azure SDK for Python | https://learn.microsoft.com/en-us/azure/developer/python/sdk/azure-sdk-overview |
