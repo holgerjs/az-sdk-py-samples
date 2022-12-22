@@ -106,7 +106,7 @@ The output should then be like this:
 
 I've shortened it since there is no need to print the whole list here.
 
-### Conclusion
+## Conclusion
 
 We can query the [Azure Retail Rates Prices API](https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices) [1] through Python to get pricing details. In order to speed up potential requests against the API, it is benefitial to create a specific query. One of the commonly used values to query might be `serviceName` property. Aforementioned example shows that we can also use the API to get all possible values for the `serviceName` property and we could then use these values in subsequent queries.
 
