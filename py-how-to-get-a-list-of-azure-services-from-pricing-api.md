@@ -5,11 +5,11 @@
 You probably know about the [Azure Retail Rates Prices API](https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices) [1] at `https://prices.azure.com/api/retail/prices`. It provides a "programmatic way to retrieve retail prices for all Azure services" [1] and does not require authentication - which makes it easy to query it from any kind of code (which was probably the idea behind creating it this way).
 As a test, you can just head over to https://prices.azure.com/api/retail/prices in your browser and the API will provide the first 100 datasets of the price list.
 
-This is the first article of a small series about working with the Azure Retail Rates Prices API. The samples within these articles will be based on Python but it could be done in a lot of other languages as well (technicallly, probably even plain `curl` within a bash script). However, due to the huge amount of pricing data that is returned by the API, Python has some advantages as there are some powerful libraries, such as Pandas, which is really benefitial when working with large datasets. 
+This is the first article of a small series about working with the Azure Retail Rates Prices API. The samples within these articles will be based on Python but it could be done in a lot of other languages as well (technically, probably even plain `curl` within a bash script). However, due to the huge amount of pricing data that is returned by the API, Python has some advantages as there are some powerful libraries, such as Pandas, which is really beneficial when working with large datasets. 
 
 ## Retrieve a list of Available Services in a given Region
 
-The [API Sample Calls](https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices#api-sample-calls) reveal that the API allows for some filter queries to be passed which allows us to narrow the retrieved data sets down by a bit - which certainly makes it easier to work with.
+The [API Sample Calls](https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices#api-sample-calls) [2] reveal that the API allows for some filter queries to be passed which allows us to narrow the retrieved data sets down by a bit - which certainly makes it easier to work with.
 
 As per the documentation, [potential filters](https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices#api-filters) [3] are:
 
@@ -108,7 +108,7 @@ I've shortened it since there is no need to print the whole list here.
 
 ## Conclusion
 
-We can query the [Azure Retail Rates Prices API](https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices) [1] through Python to get pricing details. In order to speed up potential requests against the API, it is benefitial to create a specific query. One of the commonly used values to query might be `serviceName` property. Aforementioned example shows that we can also use the API to get all possible values for the `serviceName` property and we could then use these values in subsequent queries.
+We can query the [Azure Retail Rates Prices API](https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices) [1] through Python to get pricing details. In order to speed up potential requests against the API, it is beneficial to create a specific query. One of the commonly used values to query might be the `serviceName` property. Aforementioned example shows that we can also use the API to get all possible values for the `serviceName` property and we could then use these values in subsequent queries.
 
 The method used in this example certainly has drawbacks - mainly performance, as we are always retrieving the whole price list for a given region, just to filter out the `serviceName`.
 
