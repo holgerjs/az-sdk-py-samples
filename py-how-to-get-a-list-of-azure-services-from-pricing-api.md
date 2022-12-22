@@ -1,4 +1,4 @@
-# How to retrieve the list of available services from the Azure Retail Rates Prices API
+# How to retrieve a list of available services from the Azure Retail Rates Prices API
 
 ## Introduction
 
