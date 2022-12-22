@@ -1,4 +1,4 @@
-# Use the Azure SDK for Python to retrieve a list of Azure Resources
+# How to use the Azure SDK for Python to retrieve a list of Azure Resources
 
 ## Introduction
 
@@ -73,7 +73,6 @@ We have extracted a list of Azure resources based on a given context, added them
 
 | # | Title | URL |
 | --- | --- | --- |
-| 1 | Use the Azure libraries (SDK) for Python
-| https://learn.microsoft.com/en-us/azure/developer/python/sdk/azure-sdk-overview |
+| 1 | Use the Azure libraries (SDK) for Python | https://learn.microsoft.com/en-us/azure/developer/python/sdk/azure-sdk-overview |
 | 2 | pandas.DataFrame | https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html |
 | 3 | Matplotlib: Visualization with Python | https://matplotlib.org/ |
