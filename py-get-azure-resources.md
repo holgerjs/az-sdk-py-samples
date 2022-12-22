@@ -1,6 +1,8 @@
-## Use the Azure SDK for Python to retrieve Azure Resources
+# Use the Azure SDK for Python to retrieve a list of Azure Resources
 
-The Azure SDK for Python is one of many ways to connect to Azure REST API's and extract information. Here is how to retrieve all resources from an Azure subscription, put the data into a Pandas DataFrame and plot a simple pie chart.
+## Introduction
+
+The [Azure SDK for Python](https://learn.microsoft.com/en-us/azure/developer/python/sdk/azure-sdk-overview) [1] is one of many ways to connect to Azure REST APIs and extract information. Here is an example on how to retrieve all resources from an Azure subscription, put the data into a [Pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html) [2] and plot a simple pie chart using [matplotlib](https://matplotlib.org/) [3].
 
 ### Import Libraries
 
@@ -16,6 +18,8 @@ import matplotlib
 
 ### Acquire Credentials and obtain the Management Object
 
+When using `AzureCliCredential()`, Python will use the Azure CLI context of the currently logged-in user for executing the queries.
+
 ```python
 # Acquire credential
 credential = AzureCliCredential()
@@ -28,6 +32,8 @@ resource_client = ResourceManagementClient(credential, subscription_id)
 ```
 
 ### Create and Populate a Dictionary
+
+Using `resource_client.resources.list()` through the resource client will retrieve an interable object with all Azure resources in the given subscription. We can now populate a Python dictionary with the resources and add them to a Pandas DataFrame.
 
 ```python
 resources = resource_client.resources.list()
@@ -57,3 +63,17 @@ plot = type_df_top.plot.pie(figsize=(10, 10), autopct= lambda x: '{:.0f}'.format
 
 ... which might look like something along these lines.
 ![Pie Chart](images/pie-chart.png)
+
+## Summary
+
+This short article has scratched the surface on what is possible when using the Azure SDK for Python since it allows as to combine the power of Python with the capabilities of the Azure REST API.
+We have extracted a list of Azure resources based on a given context, added them to a Pandas DataFrame and plotted a simple pie chart based on the top 10 resource count.
+
+## References
+
+| # | Title | URL |
+| --- | --- | --- |
+| 1 | Use the Azure libraries (SDK) for Python
+| https://learn.microsoft.com/en-us/azure/developer/python/sdk/azure-sdk-overview |
+| 2 | pandas.DataFrame | https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html |
+| 3 | Matplotlib: Visualization with Python | https://matplotlib.org/ |

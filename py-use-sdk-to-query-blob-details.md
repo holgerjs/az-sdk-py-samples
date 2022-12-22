@@ -132,3 +132,10 @@ Output:
 ```
 
 Note: The `last_accessed_on` value is only returned if [Access Time Tracking](https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-policy-configure?tabs=azure-portal#optionally-enable-access-time-tracking) is enabled on the Storage Account.
+
+## References
+
+| # | Title | URL |
+| --- | --- | --- |
+| 1 | Quickstart: Run your first Resource Graph query using Python | https://learn.microsoft.com/en-us/azure/governance/resource-graph/first-query-python |
+| 2 | Configure a lifecycle management policy | https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-policy-configure?tabs=azure-portal#optionally-enable-access-time-tracking |
