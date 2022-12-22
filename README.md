@@ -8,6 +8,7 @@ Some samples for the Azure SDK for Python
 ### Azure Retail Price API
 
 * [Use the Azure Retail Rates Prices API to retrieve Data](py-get-azure-pricing-from-the-price-api.md)
+* [How to retrieve a list of available services from the Azure Retail Rates Prices API](py-how-to-get-a-list-of-azure-services-from-pricing-api.md)
 
 ### Azure Resource Management
 
