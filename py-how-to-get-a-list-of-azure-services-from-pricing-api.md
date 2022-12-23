@@ -5,7 +5,7 @@
 You probably know about the [Azure Retail Rates Prices API](https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices) [1] at `https://prices.azure.com/api/retail/prices`. It provides a "programmatic way to retrieve retail prices for all Azure services" [1] and does not require authentication - which makes it easy to query it from any kind of code (which was probably the idea behind creating it this way).
 As a test, you can just head over to https://prices.azure.com/api/retail/prices in your browser and the API will provide the first 100 datasets of the price list.
 
-This is the first article of a small series about working with the Azure Retail Rates Prices API. The samples within these articles will be based on Python but it could be done in a lot of other languages as well (technically, probably even plain `curl` within a bash script). However, due to the huge amount of pricing data that is returned by the API, Python has some advantages as there are some powerful libraries, such as Pandas, which is really beneficial when working with large datasets. 
+The samples within this article will be based on Python but it could be done in a lot of other languages as well (technically, probably even plain `curl` within a bash script). However, due to the huge amount of pricing data that is returned by the API, Python has some advantages as there are some powerful libraries, such as Pandas, which is really beneficial when working with large datasets. 
 
 ## Retrieve a list of Available Services in a given Region
 
