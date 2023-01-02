@@ -40,7 +40,7 @@ Otherwise, the response would simply be:
 As you can see, this works well, however, there are drawbacks:
 
 - Not all Azure services offer the capability for checking the available name through the Azure REST API.
-- If they, do we need to know the REST API URL.
+- If they do, we need to know the REST API URL.
 - We can only run the query against a single subscription.
 
 To resolve the third point, we could first receive a list of available subscriptions and then iterate through each subscription and query the REST API on a per-subscription basis. This would work as well, however the other two drawbacks would still apply.
