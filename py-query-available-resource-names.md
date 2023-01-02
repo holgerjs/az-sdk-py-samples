@@ -1,6 +1,10 @@
 ## Azure SDK for Python - How to check for Available Resource Names
 
-If we wanted to check in Azure whether or not a given resource name is still available, we can do so relatively easily within the Azure Portal by navigating to the _All resources_ blade, making sure the subscription filter has all relevant subscriptions in scope and typing in the name that we want to check. This is fine for a manual approach - but how could we do this programmatically?
+If we wanted to check in Azure whether or not a given resource name is still available, we can do so relatively easily within the Azure Portal by navigating to the _All resources_ blade, making sure the subscription filter has all relevant subscriptions in scope and typing in the name that we want to check. 
+
+![Search Resources in the Azure Portal](images/query_resources.png)
+
+This is fine for a manual approach - but how could we do this programmatically?
 
 ### Azure REST API
 
