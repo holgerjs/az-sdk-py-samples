@@ -179,6 +179,17 @@ Contrarily, if the resource did not exist yet, the response would be `True`:
 {'resource_name': 'storage_account_name', 'available': True}
 ```
 
+Above functionality could easily be incorportated into a [script like in this example](https://github.com/holgerjs/az-sdk-py-samples/blob/main/scripts/az_check_name.py) that could be run from the command line, i.E.:
+
+```bash
+python3 az_check_name.py --name storage_account_name --type microsoft.storage/storageaccounts | jq
+
+{
+  "resource_name": "storage_account_name",
+  "available": false
+}
+```
+
 ### References
 
 | # | Title | URL |
