@@ -19,3 +19,7 @@ Some samples for the Azure SDK for Python
 * [List Storage Account Lifecycle Policies](py-list-storage-account-lifecycle-policies.md)
 * [Query Storage Blob Details such as Last Access Time](py-use-sdk-to-query-blob-details.md)
 * [Use Azure Resource Graph to extract Storage Account Security Settings](py-use-resource-graph-to-get-specific-storage-account-settings.md)
+
+### Misc
+
+* [How to retrieve a Bearer Token for Azure in Python](py-how-to-retrieve-a-bearer-token.md)
