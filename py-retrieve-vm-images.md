@@ -37,8 +37,6 @@ my_subscription_id = "{subscription-id}"
 my_location = "{azure-location}"
 ```
 
-Then, prepare a dictionary for the results.
-
 Now we could create the client and collect the list of Publishers.
 
 ```python
