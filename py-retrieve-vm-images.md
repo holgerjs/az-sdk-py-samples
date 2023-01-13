@@ -1,6 +1,6 @@
 ## Azure SDK for Python: Retrieve VM Images
 
-The [Azure SDK for Python](https://learn.microsoft.com/en-us/azure/developer/python/sdk/azure-sdk-overview) includes capabilities that allow users to retrieve Virtual Machine image details, such as the publisher names, offers, SKUs and the image details itself. [4] I was reading a thread on Stack Overflow and got interested in this functionality - so here is what I got so far.
+The [Azure SDK for Python](https://learn.microsoft.com/en-us/azure/developer/python/sdk/azure-sdk-overview) includes capabilities that allow users to retrieve Virtual Machine image details, such as the publisher names, offers, SKUs and the image details itself. [4] I was reading a thread on Stack Overflow and got interested in this functionality - and here is the corresponding write-up.
 
 The corresponding library is the [Azure Management Compute library](https://pypi.org/project/azure-mgmt-compute/) which includes the `ComputeManagementClient` class which in turn has a function called [`virtual_machine_images.list`](https://learn.microsoft.com/en-us/python/api/azure-mgmt-compute/azure.mgmt.compute.v2022_08_01.operations.virtualmachineimagesoperations?view=azure-python#azure-mgmt-compute-v2022-08-01-operations-virtualmachineimagesoperations-list). [1][2] However, this function requires further parameters:
 
