@@ -269,7 +269,7 @@ And indeed, this seems to work better:
 [...{'publisherName': 'Canonical', 'offerName': 'UbuntuServer', 'skuName': '19_10-daily-gen2', 'imageName': '19.10.202006110'}, {'publisherName': 'Canonical', 'offerName': 'UbuntuServer', 'skuName': '19_10-daily-gen2', 'imageName': '19.10.202007020'}, {'publisherName': 'Canonical', 'offerName': 'UbuntuServer', 'skuName': '19_10-daily-gen2', 'imageName': '19.10.202007030'}, {'publisherName': 'Canonical', 'offerName': 'UbuntuServer', 'skuName': '19_10-daily-gen2', 'imageName': '19.10.202007070'}, {'publisherName': 'Canonical', 'offerName': 'UbuntuServer', 'skuName': '19_10-daily-gen2', 'imageName': '19.10.202007080'}, {'publisherName': 'Canonical', 'offerName': 'UbuntuServer', 'skuName': '19_10-daily-gen2', 'imageName': '19.10.202007090'}, {'publisherName': 'Canonical', 'offerName': 'UbuntuServer', 'skuName': '19_10-daily-gen2', 'imageName': '19.10.202007100'}]
 ```
 
-So, something else to account for I presume... since there might be multiple variations. Maybe some publishers are typed all lowercase, others require capitalization - we could replace above if-clause maybe (I'm sure there are more elegant ways though): `if image_publisher.lower() in publisher.name or image_publisher.capitalize() in publisher.name:`
+So, something else to account for I presume... since there might be multiple variations. Maybe some publishers are typed all lowercase, others require capitalization - we could replace above if-clause (I'm sure there are more elegant ways though) by: `if image_publisher.lower() in publisher.name or image_publisher.capitalize() in publisher.name:`
 
 The function code would now look like this
 
