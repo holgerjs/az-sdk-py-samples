@@ -1,3 +1,7 @@
+##########################
+# Get Azure VM Images
+##########################
+
 from azure.identity import AzureCliCredential
 from azure.mgmt.compute import ComputeManagementClient
 
@@ -45,8 +49,10 @@ def get_vm_images(credential, subscription_id, location, image_publisher=None):
     
     return results
 
+if __name__ == '__main__':
+    my_credential = AzureCliCredential()
+    my_subscription_id = "{subscription-id}"
 
-my_credential = AzureCliCredential()
-my_subscription_id = "{subscription-id}"
+    my_images = get_vm_images(credential=my_credential, subscription_id=my_subscription_id, location="eastus", image_publisher="Canonical")
 
-get_vm_images(credential=my_credential, subscription_id=my_subscription_id, location="eastus", image_publisher="Canonical")
+    print(my_images)

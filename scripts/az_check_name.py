@@ -4,18 +4,6 @@ import azure.mgmt.resourcegraph as arg
 import json
 import argparse
 
-parser = argparse.ArgumentParser()
-parser.add_argument("-n", "--name", type=str)
-parser.add_argument("-t", "--type", type=str)
-
-args = parser.parse_args()
-
-r_name = args.name
-r_type = args.type
-
-# Authenticate
-credential = AzureCliCredential()
-
 def resource_graph_query( query ):
     # Get your credentials from Azure CLI (development only!) and get your subscription list
     subs_client = SubscriptionClient(credential)
@@ -66,7 +54,20 @@ def check_name_availability(resource_name, resource_type=None):
     
     return results_dict
 
-result = check_name_availability(resource_name=r_name, resource_type=r_type)
-result_as_json = json.dumps(result)
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-n", "--name", type=str)
+    parser.add_argument("-t", "--type", type=str)
 
-print(result_as_json)
+    args = parser.parse_args()
+
+    r_name = args.name
+    r_type = args.type
+
+    # Authenticate
+    credential = AzureCliCredential()
+
+    result = check_name_availability(resource_name=r_name, resource_type=r_type)
+    result_as_json = json.dumps(result)
+
+    print(result_as_json)
