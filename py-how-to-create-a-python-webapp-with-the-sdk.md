@@ -6,7 +6,7 @@
 
 ### Introduction
 
-Here is a quick doc on how I created a Python 3.11 Web App and deployed code directly from a GitHub repository.
+Here is a quick read on how I created a Python 3.11 Web App and deployed code directly from a GitHub repository.
 
 In order to be able to deploy an App Service Plan and the corresponding Web App, I installed and imported two libraries:
 
