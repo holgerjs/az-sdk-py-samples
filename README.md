@@ -12,6 +12,7 @@ Some samples for the Azure SDK for Python
 
 ### Azure Resource Management
 
+* [How to create a Python Azure Web App](py-how-to-create-a-python-webapp-with-the-sdk.md)
 * [How to Retrieve Virtual Machine Image Details](py-retrieve-vm-images.md)
 * [How to check for Available Resource Names](py-query-available-resource-names.md)
 * [Retrieve Storage Account Metrics](py-get-storage-account-metrics.md)
