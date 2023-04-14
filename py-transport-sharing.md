@@ -70,7 +70,7 @@ Below are the steps I performed to test this. I will read containers from a stor
    {'name': 'con1', 'last_modified': datetime.datetime(2022, 10, 28, 14, 45, 11, tzinfo=datetime.timezone.utc), 'etag': '"0x1DAF35011161C06"', 'lease': {'status': 'unlocked', 'state': 'available', 'duration': None}, 'public_access': None, 'has_immutability_policy': False, 'deleted': None, 'version': None, 'has_legal_hold': False, 'metadata': None, 'encryption_scope': <azure.storage.blob._models.ContainerEncryptionScope object at 0x7f9bb0fa9430>, 'immutable_storage_with_versioning_enabled': False}
    ```
 
-   When running `netstat` now, we can see that two TCP connections were established against the storage account in question. One for each blob client. (For figuring out which IP address the storage account has, one can use `nslookup`, i.E. : `nslookup {my_storage_account_name}.blob.core.windows.net`)
+   When running `netstat` now, we can see that two TCP connections were established against the storage account in question. One for each blob service client. (For figuring out which IP address the storage account has, one can use `nslookup`, i.E. : `nslookup {my_storage_account_name}.blob.core.windows.net`)
 
    ```
    $ netstat -tnov | grep 20.41.119.17
